@@ -13,7 +13,7 @@ describe('Should get /', () => {
     });
 
     after((done) => {
-        server.close();
+        server.close(() => console.log('host stopped.'));
         done();
     });
 

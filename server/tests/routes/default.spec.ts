@@ -25,4 +25,12 @@ describe('Should get /', () => {
         });
     });
 
+    it('should get posts', (done) => {
+        request('http://localhost:3333/posts/', (error, response, body) => {
+            const data = JSON.parse(body);
+            expect(data.length).to.equal(3);
+            done();
+        });
+    });
+
 });
